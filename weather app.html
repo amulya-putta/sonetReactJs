@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <script>
+        
+        function f1()
+        {
+            if(document.getElementById("wea").value=="1")
+            {
+                var request=new XMLHttpRequest();
+                request.open("GET","https://api.openweathermap.org/data/2.5/weather?q=Hyderabad&appid=93f26e3c57081a6210de53b8dcfdfea4",true);
+                request.onload =  function(){
+                if( request.status>=200 && request.status<400){
+                var data = JSON.parse(request.responseText);
+                console.log(data);
+                document.getElementById("t").innerHTML="HYDERABAD'S TEMPERATURE:";
+                document.getElementById('temp').innerHTML = data.main.temp;
+                document.getElementById("w").innerHTML="HYDERABAD'S WEATHER:";
+                document.getElementById('weather').innerHTML = data.weather[0].main;
+                var icon = data.weather[0].icon+".png";
+                document.getElementById('myimg').src = "https://openweathermap.org/img/w/"+icon ;
+                }
+                else {
+                console.log("some error");
+                }
+                };
+                request.onerror = function(){
+                console.log("connection error");
+                 };
+                request.send();
+       
+            }
+            if(document.getElementById("wea").value=="2")
+            {
+                var request=new XMLHttpRequest();
+                request.open("GET","https://api.openweathermap.org/data/2.5/weather?q=Secunderabad&appid=93f26e3c57081a6210de53b8dcfdfea4",true);
+                request.onload =  function(){
+                 if( request.status>=200 && request.status<400){
+                var data = JSON.parse(request.responseText);
+                console.log(data);
+                document.getElementById("t").innerHTML="SECUNDERABAD'S TEMPERATURE:";
+                document.getElementById('temp').innerHTML = data.main.temp;
+                document.getElementById("w").innerHTML="SECUNDERABAD'S WEATHER:";
+                document.getElementById('weather').innerHTML = data.weather[0].main;
+                var icon = data.weather[0].icon+".png";
+                document.getElementById('myimg').src = "https://openweathermap.org/img/w/"+icon ;
+                }
+                else {
+                console.log("some error");
+                }
+                };
+                request.onerror = function(){
+                console.log("connection error");
+                };
+                request.send();
+       
+            }
+            if(document.getElementById("wea").value=="3")
+            {
+                var request=new XMLHttpRequest();
+                request.open("GET","https://api.openweathermap.org/data/2.5/weather?q=Ameerpet&appid=93f26e3c57081a6210de53b8dcfdfea4",true);
+                request.onload =  function(){
+                if( request.status>=200 && request.status<400){
+                var data = JSON.parse(request.responseText);
+                console.log(data);
+                document.getElementById("t").innerHTML="AMEERPET'S TEMPERATURE:";
+                document.getElementById('temp').innerHTML = data.main.temp;
+                document.getElementById("w").innerHTML="AMEERPET'S WEATHER:";
+                document.getElementById('weather').innerHTML = data.weather[0].main;
+                var icon = data.weather[0].icon+".png";
+                document.getElementById('myimg').src = "https://openweathermap.org/img/w/"+icon ;
+                 }
+                else {
+                    console.log("some error");
+                }
+                 };
+                request.onerror = function(){
+                console.log("connection error");
+                };
+                request.send();
+       
+            }
+            if(document.getElementById("wea").value=="4")
+            {
+                var request=new XMLHttpRequest();
+                request.open("GET","https://api.openweathermap.org/data/2.5/weather?q=Panjagutta&appid=93f26e3c57081a6210de53b8dcfdfea4",true);
+                request.onload =  function(){
+                if( request.status>=200 && request.status<400){
+                var data = JSON.parse(request.responseText);
+                console.log(data);
+                document.getElementById("t").innerHTML="PANJAGUTTA'S TEMPERATURE:";
+                document.getElementById('temp').innerHTML = data.main.temp;
+                document.getElementById("w").innerHTML="PANJAGUTTA'S WEATHER:";
+                document.getElementById('weather').innerHTML = data.weather[0].main;
+                var icon = data.weather[0].icon+".png";
+                document.getElementById('myimg').src = "https://openweathermap.org/img/w/"+icon ;
+                }
+                else {
+                    console.log("some error");
+                }
+            };
+            request.onerror = function(){
+            console.log("connection error");
+            };
+             request.send();
+       
+            }
+            if(document.getElementById("wea").value=="5")
+            {
+                var request=new XMLHttpRequest();
+                request.open("GET","https://api.openweathermap.org/data/2.5/weather?q=Secunderabad&appid=93f26e3c57081a6210de53b8dcfdfea4",true);
+                request.onload =  function(){
+                if( request.status>=200 && request.status<400){
+                var data = JSON.parse(request.responseText);
+                console.log(data);
+                document.getElementById("t").innerHTML="BEGUMPET'S TEMPERATURE:";
+                document.getElementById('temp').innerHTML = data.main.temp;
+                document.getElementById("w").innerHTML="BRGUMPET'S WEATHER:";
+                document.getElementById('weather').innerHTML = data.weather[0].main;
+                var icon = data.weather[0].icon+".png";
+                document.getElementById('myimg').src = "https://openweathermap.org/img/w/"+icon ;
+                }
+                else {
+                console.log("some error");
+                }
+                };
+            request.onerror = function(){
+                console.log("connection error");
+                };
+                request.send();
+       
+            } 
+        }
+    </script>
+    <style>
+        h1{
+            
+            background-color: dodgerblue;
+        }
+        h2{
+            background-color: rgb(255, 172, 172);
+        }
+        button{
+            color: rgb(39, 0, 131);
+        }
+        img{
+            color:lavender;
+        }
+        body{
+            background-color: lightgoldenrodyellow;
+        }
+    </style>
+
+</head>
+<body>
+    <h1 >Weather update</h1>
+    <select id="wea">
+        <option value="1" selected>Hyderabad</option>
+        <option value="2">Secunderabad</option>
+        <option value="3">Ameerpet</option>
+        <option value="4">Panjagutta</option>
+        <option value="5">Begumpet</option>
+    </select>
+    <button type="button" onclick="f1()">choose</button>
+    <h2 id="t">TODAYS TEMPERATURE:</h2>
+    <h2 id="temp">  Temp here </h2>
+    <h2 id="w"> TODAYS WEATHER:</h2> 
+    <h2 id="weather">  Weather here </h2>
+    <img id="myimg" src="img.png" alt="weatherimagehere"/>
+
+    
+</body>
+</html>
