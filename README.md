@@ -1,1 +1,0 @@
-# sonetReactJs weather app
